@@ -39,7 +39,8 @@
                </table>
                <ul class="nav nav-pills">
                    <li th:each="page,status:${pages}">
-                       <a th:class="${status.index==currentPage?'btn btn-primary ms-1':'btn btn-outline-primary ms-1'}"
+                       <a th:class="${status.index==currentPage?'btn btn-primary ms-1'
+                                                                : 'btn btn-outline-primary ms-1'}"
                           th:text="${status.index}"
                           th:href="@{/index(page=${status.index},keyword=${keyword})}"  ></a>
                    </li>
@@ -47,6 +48,5 @@
            </div>
        </div>
    </div>
-
 </body>
 </html>

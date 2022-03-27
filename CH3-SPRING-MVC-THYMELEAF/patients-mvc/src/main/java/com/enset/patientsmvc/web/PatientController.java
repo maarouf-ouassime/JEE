@@ -1,5 +1,4 @@
 package com.enset.patientsmvc.web;
-
 import com.enset.patientsmvc.entities.Patient;
 import com.enset.patientsmvc.repositories.PatientRepository;
 import lombok.AllArgsConstructor;
@@ -13,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
-
 @Controller @AllArgsConstructor
 public class PatientController {
     PatientRepository patientRepository;

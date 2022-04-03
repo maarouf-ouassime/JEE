@@ -6,8 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="enset-ioc-2" />
-        <module name="IOC-SPRING" />
+        <module name="Maarouf_IOC_Framework" />
       </profile>
     </annotationProcessing>
   </component>

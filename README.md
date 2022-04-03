@@ -12,3 +12,7 @@ link rapport 2 : https://github.com/maarouf-ouassime/JEE/blob/main/CH2-%20SPRING
 Chapitre 3 : SPRING-MVC-THYMELEAF
 
 link rapport 3 : https://github.com/maarouf-ouassime/JEE/blob/main/CH3-SPRING-MVC-THYMELEAF/CH3-SPRING-MVC-THYMELEAF.pdf
+
+FrameWork : mini frameword de l'injection des dépendances 
+
+link rapport  : https://github.com/maarouf-ouassime/JEE/blob/main/Maarouf_IOC_Framework/rapport_framework_ioc.pdf

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" layout:decorate="template1"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Form Patients</title>
+    <link rel="stylesheet" href="/webjars/bootstrap/5.1.3/css/bootstrap.min.css">
+</head>
+<body>
+<div layout:fragment="content1">
+    <div class="col-md-6 offset-3">
+        <form method="post" th:action="@{/admin/save(page=${currentPage},keyword=${keyword})}">
+            <div>
+                <label>ID</label>
+                <label th:text="${etudiant.id}"></label>
+                <input class="form-control" type="hidden" name="id" th:value="${etudiant.id}">
+            </div>
+            <div>
+                <label>Nom</label>
+                <input class="form-control" type="text" name="nom" th:value="${etudiant.nom}">
+                <span class="text-danger" th:errors="${etudiant.nom}"></span>
+            </div>
+            <div>
+                <label>prenom</label>
+                <input class="form-control" type="text" name="prenom" th:value="${etudiant.prenom}">
+                <span class="text-danger" th:errors="${etudiant.prenom}"></span>
+            </div>
+            <div>
+                <label>Email</label>
+                <input class="form-control" type="text" name="email" th:value="${etudiant.email}">
+                <span class="text-danger" th:errors="${etudiant.email}"></span>
+            </div>
+            <div>
+                <label>Date Naissance</label>
+                <input class="form-control" type="date" name="dateNaissance" th:value="${etudiant.dateNaissance}">
+                <span class="text-danger" th:errors="${etudiant.dateNaissance}"></span>
+            </div>
+            <div>
+                <label>votre genre ?</label>
+                <select name="genre">
+                    <option th:each="Genre : ${T(com.example.etudientapp.entities.Genre).values()}"
+                            th:text="${Genre}"></option>
+                </select>
+                <span class="text-danger" th:errors="${etudiant.genre}"></span>
+            </div>
+            <div>
+                <label>Regle</label>
+                <input  type="checkbox" name="regle" th:checked="${etudiant.regle}">
+                <span class="text-danger" th:errors="${etudiant.regle}"></span>
+            </div>
+            <button type="submit" class="btn btn-primary">Save</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>

@@ -15,19 +15,10 @@
       <li class="nav-item">
         <a class="nav-link active" th:href="@{/user/index}">Home</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#">Disabled</a>
-      </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Etudiants</a>
         <ul class="dropdown-menu">
-          <li sec:authorize="hasRole('ADMIN')"><a class="dropdown-item" th:href="@{/admin/formEtudiants}">Nouveau</a></li>
+          <li sec:authorize="hasAuthority('ADMIN')"><a class="dropdown-item" th:href="@{/admin/formEtudiants}">Nouveau</a></li>
           <li><a class="dropdown-item" th:href="@{/user/index}">Chercher</a></li>
         </ul>
       </li>

@@ -16,3 +16,7 @@ link rapport 3 : https://github.com/maarouf-ouassime/JEE/blob/main/CH3-SPRING-MV
 FrameWork : mini framework de l'injection des dépendances 
 
 link rapport  : https://github.com/maarouf-ouassime/JEE/blob/main/Maarouf_IOC_Framework/rapport_framework_ioc.pdf
+
+Activite partique : EtudiantApp
+
+link rapport : https://github.com/maarouf-ouassime/JEE/blob/main/EtudientApp/complete_app_rapport-EtudiantApp.pdf

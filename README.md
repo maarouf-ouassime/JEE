@@ -7,7 +7,7 @@ link rapport 1 : https://github.com/maarouf-ouassime/JEE/blob/main/CH1-IOC/CH1-I
 
 Chapitre 2 : SPRING_DATA-JPA-HIBERNATE 
 
-link rapport 2 : https://github.com/maarouf-ouassime/JEE/blob/main/CH2-%20SPRING_DATA-JPA-HIBERNATE/CH2-%20SPRING_DATA-JPA-HIBERNATE.pdf
+link rapport 2 : https://github.com/maarouf-ouassime/JEE/blob/main/CH2-SPRING_DATA-JPA-HIBERNATE/CH2-SPRING_DATA-JPA-HIBERNATE.pdf
 
 Chapitre 3 : SPRING-MVC-THYMELEAF
 

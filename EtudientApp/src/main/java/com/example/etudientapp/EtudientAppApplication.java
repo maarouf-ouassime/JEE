@@ -20,37 +20,44 @@ public class EtudientAppApplication {
     public static void main(String[] args) {
         SpringApplication.run(EtudientAppApplication.class, args);
     }
-    @Bean
-    CommandLineRunner commandLineRunner(EtudiantRepository etudiantRepository){
-        return args -> {
-            etudiantRepository.save(new Etudiant(null,"Ouassime","Maarouf","a@a.com",new Date(),Genre.MASCULIN,false));
-            etudiantRepository.save(new Etudiant(null,"Ali","Baba","b@b.com",new Date(),Genre.MASCULIN,false));
-            etudiantRepository.save(new Etudiant(null,"Khadija","Sara","c@c.com",new Date(),Genre.FEMININ,true));
-            etudiantRepository.save(new Etudiant(null,"Iman","Radi","d@d.com",new Date(),Genre.FEMININ,true));
 
+    //@Bean
+    CommandLineRunner commandLineRunner(EtudiantRepository etudiantRepository) {
+        return args -> {
+            etudiantRepository.save(
+                    new Etudiant(null, "Ouassime", "Maarouf", "a@a.com", new Date(), Genre.MASCULIN, false));
+            etudiantRepository.save(
+                    new Etudiant(null, "Ali", "Baba", "b@b.com", new Date(), Genre.MASCULIN, false));
+            etudiantRepository.save(
+                    new Etudiant(null, "Khadija", "Sara", "c@c.com", new Date(), Genre.FEMININ, true));
+            etudiantRepository.save(
+                    new Etudiant(null, "Iman", "Radi", "d@d.com", new Date(), Genre.FEMININ, true));
 
             etudiantRepository.findAll().forEach(etudiant -> {
-                System.out.println(etudiant.getNom());
+                System.out.println(etudiant);
             });
         };
     }
-   // @Bean
-    CommandLineRunner saveUsers(SecurityService securityService){
+
+    // @Bean
+    CommandLineRunner saveUsers(SecurityService securityService) {
         return args -> {
-            securityService.saveNewUser("ouassime","1234","1234");
-            securityService.saveNewUser("maarouf","1234","1234");
-            securityService.saveNewUser("wissam","1234","1234");
+            securityService.saveNewUser("ouassime", "1234", "1234");
+            securityService.saveNewUser("maarouf", "1234", "1234");
+            securityService.saveNewUser("wissam", "1234", "1234");
 
-            securityService.saveNewRole("USER","");
-            securityService.saveNewRole("ADMIN","");
+            securityService.saveNewRole("USER", "");
+            securityService.saveNewRole("ADMIN", "");
 
-            securityService.addRoleToUser("maarouf","ADMIN");
-            securityService.addRoleToUser("maarouf","USER");
-            securityService.addRoleToUser("ouassime","USER");
-            securityService.addRoleToUser("wissam","USER");
+            securityService.addRoleToUser("maarouf", "ADMIN");
+            securityService.addRoleToUser("maarouf", "USER");
+            securityService.addRoleToUser("ouassime", "USER");
+            securityService.addRoleToUser("wissam", "USER");
         };
     }
+
     @Bean
-    PasswordEncoder passwordEncoder(){ return new BCryptPasswordEncoder();
+    PasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
     }
 }

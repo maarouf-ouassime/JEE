@@ -12,9 +12,8 @@ import javax.persistence.*;
 @AllArgsConstructor
 
 public class AppRole {
-
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long roleId;
     @Column(unique = true)
     private String roleName;

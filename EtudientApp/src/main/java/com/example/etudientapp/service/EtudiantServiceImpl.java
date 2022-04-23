@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 public class EtudiantServiceImpl implements EtudiantService {
     @Autowired
     EtudiantRepository etudiantRepository;
+
     @Override
     public Page<Etudiant> findPaginated(int pageNo, int pageSize, String sortField, String sortDirection) {
         Sort sort = sortDirection.equalsIgnoreCase(Sort.Direction.ASC.name()) ? Sort.by(sortField).ascending() :
@@ -20,5 +21,5 @@ public class EtudiantServiceImpl implements EtudiantService {
         Pageable pageable = PageRequest.of(pageNo - 1, pageSize, sort);
         return this.etudiantRepository.findAll(pageable);
     }
-    }
+}
 

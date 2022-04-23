@@ -11,17 +11,19 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import javax.persistence.Transient;
 import java.util.UUID;
 
-@Service @Slf4j @AllArgsConstructor
+@Service
+@Slf4j
+@AllArgsConstructor
 public class SecurityServiceImpl implements SecurityService {
     private AppUserRepository appUserRepository;
     private AppRoleRepository appRoleRepository;
     private PasswordEncoder passwordEncoder;
+
     @Override
     public AppUser saveNewUser(String username, String password, String rePassword) {
-        if(!password.equals(rePassword))
+        if (!password.equals(rePassword))
             throw new RuntimeException("password not match");
         String hashedPWD = passwordEncoder.encode(password);
         AppUser appUser = new AppUser();
@@ -29,7 +31,7 @@ public class SecurityServiceImpl implements SecurityService {
         appUser.setUsername(username);
         appUser.setPassword(hashedPWD);
         appUser.setActive(true);
-        AppUser savedAppUser =  appUserRepository.save(appUser);
+        AppUser savedAppUser = appUserRepository.save(appUser);
         return savedAppUser;
     }
 
@@ -37,13 +39,14 @@ public class SecurityServiceImpl implements SecurityService {
     public AppRole saveNewRole(String roleName, String description) {
         AppRole appRole = appRoleRepository.findByRoleName(roleName);
         if (appRole != null)
-            throw new RuntimeException("Role "+roleName+"Already exist");
+            throw new RuntimeException("Role " + roleName + "Already exist");
         appRole = new AppRole();
         appRole.setRoleName(roleName);
         appRole.setDescription(description);
-        AppRole savedAppRole =  appRoleRepository.save(appRole);
+        AppRole savedAppRole = appRoleRepository.save(appRole);
         return savedAppRole;
     }
+
     @Transactional
     @Override
     public void addRoleToUser(String username, String roleName) {

@@ -15,18 +15,21 @@ import java.util.Date;
 @NoArgsConstructor
 @Data
 public class Etudiant {
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Size(min = 2,max = 20)
+
+    @Size(min = 2, max = 20)
     private String nom;
-    @Size(min = 2,max = 20)
-    private String prenom ;
+    @Size(min = 2, max = 20)
+    private String prenom;
     @Email
     private String email;
     @Temporal(TemporalType.DATE)
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date dateNaissance;
+
     @Enumerated(EnumType.STRING)
-    private Genre genre ;
-    private boolean regle=false;
+    private Genre genre;
+    private boolean regle = false;
 }
